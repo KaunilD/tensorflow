@@ -418,15 +418,15 @@ def tf_repositories(path_prefix = "", tf_repo_name = ""):
 
     # 310ba5ee72661c081129eb878c1bbcec936b20f0 is based on 3.8.0 with a fix for protobuf.bzl.
     PROTOBUF_URLS = [
-        "https://storage.googleapis.com/mirror.tensorflow.org/github.com/protocolbuffers/protobuf/archive/310ba5ee72661c081129eb878c1bbcec936b20f0.tar.gz",
-        "https://github.com/protocolbuffers/protobuf/archive/310ba5ee72661c081129eb878c1bbcec936b20f0.tar.gz",
+        "https://mirror.bazel.build/github.com/protocolbuffers/protobuf/archive/v3.6.1.3.tar.gz",
+        "https://github.com/protocolbuffers/protobuf/archive/v3.6.1.3.tar.gz",
     ]
-    PROTOBUF_SHA256 = "b9e92f9af8819bbbc514e2902aec860415b70209f31dfc8c4fa72515a5df9d59"
-    PROTOBUF_STRIP_PREFIX = "protobuf-310ba5ee72661c081129eb878c1bbcec936b20f0"
+    PROTOBUF_SHA256 = "73fdad358857e120fd0fa19e071a96e15c0f23bb25f85d3f7009abfd4f264a2a"
+    PROTOBUF_STRIP_PREFIX = "protobuf-3.6.1.3"
 
     # protobuf depends on @zlib, it has to be renamed to @zlib_archive because "zlib" is already
     # defined using bind for grpc.
-    PROTOBUF_PATCH = "//third_party/protobuf:protobuf.patch"
+    PROTOBUF_PATCH = "//third_party/protobuf:21655.patch"
 
     tf_http_archive(
         name = "com_google_protobuf",
